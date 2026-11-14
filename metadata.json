@@ -1,0 +1,6 @@
+{
+  "name": "Nuestra Historia — Dedicatoria de Amor",
+  "description": "Página interactiva de dedicación romántica con contador de tiempo juntos, lista de recuerdos compartidos, galería de fotos con mensajes ocultos y música de fondo personalizada.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
