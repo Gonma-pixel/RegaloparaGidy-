@@ -212,7 +212,7 @@ export function HeroDedication({
                   <div className="flex flex-col items-center">
                     <div className="h-[86px] w-full max-w-[220px] flex items-end justify-center border-b-2 border-dotted border-[#9E9398] pb-1.5">
                       <img
-                        src="/assets/aistudio/Dibujo_9d6c1bce.png"
+                        src="./assets/aistudio/Dibujo_9d6c1bce.png"
                         alt="Firma de Luis Felipe Cuya Ruiz"
                         referrerPolicy="no-referrer"
                         className="max-h-20 w-auto object-contain select-none brightness-0"

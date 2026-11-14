@@ -21,7 +21,7 @@ export function OpeningChickGate({ onOpen }: OpeningChickGateProps) {
         <div className="w-52 sm:w-64 flex items-center justify-center">
           {!imgError ? (
             <motion.img
-              src="/assets/aistudio/image_bf2475da.png"
+              src="./assets/aistudio/image_bf2475da.png"
               alt="Pollito en 3D sosteniendo un corazón"
               referrerPolicy="no-referrer"
               onError={() => setImgError(true)}

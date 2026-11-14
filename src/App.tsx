@@ -136,7 +136,7 @@ export default function App() {
         <DrawingsDashboardPage
           initialDrawingId={dashboardRoute.drawingId}
           onGoToStory={() => {
-            window.history.pushState(null, '', '/');
+            window.history.pushState(null, '', window.location.pathname || './');
             setDashboardRoute({ active: false, drawingId: null });
           }}
         />

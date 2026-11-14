@@ -10,14 +10,19 @@ export interface SavedDrawingRecord {
 const LOCAL_GALLERY_KEY = 'dedication_drawings_gallery_v1';
 
 export function buildDashboardUrl(drawingId?: string): string {
-  const origin =
-    typeof window !== 'undefined' ? window.location.origin : '';
+  if (typeof window === 'undefined') return '?dashboard=dibujos';
+  const baseUrl = `${window.location.origin}${window.location.pathname}`;
   const params = new URLSearchParams();
   params.set('dashboard', 'dibujos');
   if (drawingId) {
     params.set('id', drawingId);
   }
-  return `${origin}/?${params.toString()}`;
+  return `${baseUrl}?${params.toString()}`;
+}
+
+function isJsonResponse(response: Response): boolean {
+  const ct = response.headers.get('content-type') || '';
+  return ct.includes('application/json');
 }
 
 export async function saveDrawingToDashboard(
@@ -36,19 +41,19 @@ export async function saveDrawingToDashboard(
   let finalRecord = localRecord;
 
   try {
-    const response = await fetch('/api/drawings', {
+    const response = await fetch('./api/drawings', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ dataUrl, title }),
     });
-    if (response.ok) {
+    if (response.ok && isJsonResponse(response)) {
       const json = (await response.json()) as { drawing?: SavedDrawingRecord };
       if (json.drawing?.id) {
         finalRecord = json.drawing;
       }
     }
   } catch {
-    // Fallback gracefully to IndexedDB if backend route is temporarily unreachable
+    // Fallback gracefully to IndexedDB on static hosts (e.g. GitHub Pages)
   }
 
   const existingLocal =
@@ -70,21 +75,20 @@ export async function fetchDashboardDrawings(): Promise<SavedDrawingRecord[]> {
     (await idbGet<SavedDrawingRecord[]>(LOCAL_GALLERY_KEY)) ?? [];
 
   try {
-    const response = await fetch('/api/drawings');
-    if (response.ok) {
+    const response = await fetch('./api/drawings');
+    if (response.ok && isJsonResponse(response)) {
       const json = (await response.json()) as {
         drawings?: SavedDrawingRecord[];
       };
       const serverItems = Array.isArray(json.drawings) ? json.drawings : [];
       const seen = new Set(serverItems.map((item) => item.id));
-      const merged = [
+      return [
         ...serverItems,
         ...localItems.filter((item) => !seen.has(item.id)),
       ].sort(
         (a, b) =>
           new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
       );
-      return merged;
     }
   } catch {
     // Fall back to local IndexedDB cache
@@ -97,8 +101,8 @@ export async function fetchDashboardDrawingById(
   id: string
 ): Promise<SavedDrawingRecord | null> {
   try {
-    const response = await fetch(`/api/drawings/${encodeURIComponent(id)}`);
-    if (response.ok) {
+    const response = await fetch(`./api/drawings/${encodeURIComponent(id)}`);
+    if (response.ok && isJsonResponse(response)) {
       const json = (await response.json()) as {
         drawing?: SavedDrawingRecord;
       };
@@ -115,7 +119,7 @@ export async function fetchDashboardDrawingById(
 
 export async function deleteDashboardDrawing(id: string): Promise<void> {
   try {
-    await fetch(`/api/drawings/${encodeURIComponent(id)}`, {
+    await fetch(`./api/drawings/${encodeURIComponent(id)}`, {
       method: 'DELETE',
     });
   } catch {

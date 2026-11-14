@@ -75,7 +75,7 @@ const STORAGE_KEYS = {
 };
 
 const YOUR_NAME_BG =
-  '/assets/aistudio/wp1892101-anime-4k-your-name-wallpapers_ab5fd9a6.jpg';
+  './assets/aistudio/wp1892101-anime-4k-your-name-wallpapers_ab5fd9a6.jpg';
 
 const PAGE_MEDIA_POOL = [
   YOUR_NAME_BG,

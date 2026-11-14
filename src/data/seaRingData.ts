@@ -31,7 +31,7 @@ export interface MoteSpec {
 }
 
 export const SEA_STILL_URL =
-  '/assets/aistudio/wp1892101-anime-4k-your-name-wallpapers_ab5fd9a6.jpg';
+  './assets/aistudio/wp1892101-anime-4k-your-name-wallpapers_ab5fd9a6.jpg';
 
 export const SEA_VIDEO_URL = '';
 
@@ -41,7 +41,7 @@ const RAW_SITES: Array<
   [
     'Corazón a Distancia',
     'corazon-a-distancia',
-    '/assets/aistudio/image_f54abd78.png',
+    './assets/aistudio/image_f54abd78.png',
     920,
     1440,
     'brand',
@@ -50,7 +50,7 @@ const RAW_SITES: Array<
   [
     'Único e Inigualable',
     'unico-e-inigualable',
-    '/assets/aistudio/image_21a5c947.png',
+    './assets/aistudio/image_21a5c947.png',
     960,
     1440,
     'build',
@@ -59,7 +59,7 @@ const RAW_SITES: Array<
   [
     'Medio Corazón',
     'medio-corazon',
-    '/assets/aistudio/image_3cd78521.png',
+    './assets/aistudio/image_3cd78521.png',
     920,
     1440,
     'brand',
@@ -68,7 +68,7 @@ const RAW_SITES: Array<
   [
     'Fox Couture',
     'fox-couture',
-    '/assets/aistudio/image_319d6fb8.png',
+    './assets/aistudio/image_319d6fb8.png',
     1000,
     1440,
     'build',
@@ -77,7 +77,7 @@ const RAW_SITES: Array<
   [
     'Tu Mirada',
     'tu-mirada',
-    '/assets/aistudio/image_f129c9a6.png',
+    './assets/aistudio/image_f129c9a6.png',
     920,
     1440,
     'build',
@@ -86,7 +86,7 @@ const RAW_SITES: Array<
   [
     'Tu Graduación',
     'tu-graduacion',
-    '/assets/aistudio/image_eeef0090.png',
+    './assets/aistudio/image_eeef0090.png',
     940,
     1440,
     'build',
@@ -95,7 +95,7 @@ const RAW_SITES: Array<
   [
     'Mi Polluelita',
     'mi-polluelita',
-    '/assets/aistudio/image_faf81bbd.png',
+    './assets/aistudio/image_faf81bbd.png',
     1000,
     1440,
     'brand',
@@ -104,7 +104,7 @@ const RAW_SITES: Array<
   [
     'Paz y Guiño',
     'paz-y-guino',
-    '/assets/aistudio/image_dbc467a1.png',
+    './assets/aistudio/image_dbc467a1.png',
     920,
     1440,
     'brand',
@@ -113,7 +113,7 @@ const RAW_SITES: Array<
   [
     'Mi Estrellita',
     'mi-estrellita',
-    '/assets/aistudio/image_06363085.png',
+    './assets/aistudio/image_06363085.png',
     920,
     1440,
     'learn',
@@ -122,7 +122,7 @@ const RAW_SITES: Array<
   [
     'Nuestras Llamadas',
     'nuestras-llamadas',
-    '/assets/aistudio/image_c0158469.png',
+    './assets/aistudio/image_c0158469.png',
     920,
     1440,
     'build',
@@ -131,7 +131,7 @@ const RAW_SITES: Array<
   [
     '31 de Agosto',
     '31-de-agosto',
-    '/assets/aistudio/image_dfb3ff96.png',
+    './assets/aistudio/image_dfb3ff96.png',
     960,
     1440,
     'learn',
@@ -140,7 +140,7 @@ const RAW_SITES: Array<
   [
     'Siempre Radiante',
     'siempre-radiante',
-    '/assets/aistudio/image_eeef0090.png',
+    './assets/aistudio/image_eeef0090.png',
     940,
     1440,
     'learn',
@@ -149,7 +149,7 @@ const RAW_SITES: Array<
   [
     'Juntos Siempre',
     'juntos-siempre',
-    '/assets/aistudio/image_f54abd78.png',
+    './assets/aistudio/image_f54abd78.png',
     920,
     1440,
     'brand',
@@ -158,7 +158,7 @@ const RAW_SITES: Array<
   [
     'Luz en mi Vida',
     'luz-en-mi-vida',
-    '/assets/aistudio/image_faf81bbd.png',
+    './assets/aistudio/image_faf81bbd.png',
     1000,
     1440,
     'learn',
@@ -167,7 +167,7 @@ const RAW_SITES: Array<
   [
     'Cada Sonrisa',
     'cada-sonrisa',
-    '/assets/aistudio/image_dbc467a1.png',
+    './assets/aistudio/image_dbc467a1.png',
     920,
     1440,
     'build',
@@ -176,7 +176,7 @@ const RAW_SITES: Array<
   [
     'Noches Contigo',
     'noches-contigo',
-    '/assets/aistudio/image_c0158469.png',
+    './assets/aistudio/image_c0158469.png',
     920,
     1440,
     'brand',
